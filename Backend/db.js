@@ -13,6 +13,6 @@ const connectmongo=async()=>{
     catch(error){
         console.log(`Error in connecting to MongoDB ${error}`);
         process.exit();
-    }    
+    }     
 }
 module.exports=connectmongo;
