@@ -10,12 +10,12 @@ const reducer=(st,act)=>{
             let nar=[...st];    
             nar.splice(act.index,1);
             return  nar ;
-        case "UPDATE":
+        case "UPDATE": 
             let nar1=[...st];
             nar1.splice(act.index,1);
             return [...nar1,{id:act.id,name:act.name,img:act.img,price:act.price,size:act.size,qty:act.qty}]
         case "CHECKOUT":
-            localStorage.setItem("cart",JSON.stringify(st));
+            // localStorage.setItem("cart",JSON.stringify(st));
             return [];
 
         default:

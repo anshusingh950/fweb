@@ -3,7 +3,7 @@ const app = express()
 const port = 5000
 const mongoDB=require("./db")
 mongoDB();
-app.use((req,res,next)=>{
+app.use((req,res,next)=>{    // For implementing CORS 
     res.setHeader("Access-Control-Allow-Origin","http://localhost:3000");
     res.header(
         "Access-Control-Allow-Headers",
@@ -11,11 +11,12 @@ app.use((req,res,next)=>{
     );
     next();
 })
-app.use(express.json());
+app.use(express.json());        // Using different routers like registering,login,fetching data etc
 app.use('/api',require("./Router/CreateUser")); 
 app.use('/api',require("./Router/DisplayData")); 
+app.use('/api',require("./Router/GetOrder")); 
 app.use('/api',require("./Router/OrderData"));   
 
-app.listen(port, () => {
+app.listen(port, () => {    // it will start an expess app ( HTTP server ) that listens for incoming requests on the specified port
   console.log(`Example app listening on port ${port}`)
 })

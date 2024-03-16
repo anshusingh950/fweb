@@ -1,9 +1,10 @@
 import Navbar from "../Components/Navbar"
 import Footer from "../Components/Footer"
-import {Link} from "react-router-dom";
+import {Link,  useNavigate} from "react-router-dom";
 import React ,{useState} from 'react'
 
 export default function Signup() {
+    let  navigate = useNavigate();
     const [credentials,setcredentials]=useState({name:"",email:"",password:"",location:""})
     const handleSubmit=async(e)=>{
         e.preventDefault();
@@ -19,6 +20,9 @@ export default function Signup() {
         console.log(js)
         if(!js.success){
             alert("Enter Valid Credentials")
+        }
+        else{
+            navigate("/login");
         }
     }
     const onChange=(ev)=>{

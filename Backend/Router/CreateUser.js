@@ -4,7 +4,7 @@ const User=require('../models/user');
 const { body, validationResult } = require('express-validator');
 const bcrypt=require("bcryptjs")
 const jwt=require("jsonwebtoken")
-const jwtSecret="mypopisotwellasheshouldbepasswordisnotnull"
+const jwtSecret="JSONwebtokenisusefulforauthentication"
 
 router.post("/createuser",[
     body('name').isLength({min:3}),body('password','Password should be min 8 characters').isLength({min:8}),body('email',).isEmail(),body('location').isLength({min:3})]

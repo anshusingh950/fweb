@@ -16,7 +16,8 @@ const Card=(props)=>{
                 v=i;
             }
         }
-        (v===-1)?await dispatch1({type:"ADD",id:props.fooditem._id,name:props.fooditem.name,img:props.fooditem.img,price:finalPrize,size:size,qty:qty}):await dispatch1({type:"UPDATE",id:props.fooditem._id,name:props.fooditem.name,img:props.fooditem.img,price:finalPrize,size:size,qty:qty,index:v});
+        (v===-1)?await dispatch1({type:"ADD",id:props.fooditem._id,name:props.fooditem.name,img:props.fooditem.img,price:finalPrize,size:size,qty:qty})
+            :  await dispatch1({type:"UPDATE",id:props.fooditem._id,name:props.fooditem.name,img:props.fooditem.img,price:finalPrize,size:size,qty:qty,index:v});
         console.log(data);
     }
     useEffect(()=>{
@@ -24,7 +25,7 @@ const Card=(props)=>{
     },[])
   return (
     <div>
-        <div className="card" style={{width: '20rem',marginTop:'1rem'}}>
+        <div className="card " style={{width: '20rem',marginTop:'1rem',backdropFilter:`blur(20px)`,background:`transparent`}}>
             <div style={{height:'200px'}}>
                 <img src={props.fooditem.img} className="card-img-top" alt="..." style={{height:'200px',objectFit:"fill"}}  />
             </div>

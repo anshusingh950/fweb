@@ -7,7 +7,7 @@ export default function Footer() {
         <div className=' bg-light  bottoms' style={{minHeight:'150px'}}>
             <div className="container">
   <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    <p className="col-md-4 mb-0 text-muted">© 2022 Company, Inc</p>
+    <p className="col-md-4 mb-0 text-muted">© 2023 Company, Inc</p>
 
     
 
